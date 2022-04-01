@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap");
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    background: #000000;
+    padding: 20px;
+}
+.logo {
+    font-size: 30px;
+    color: white;
+}
+
+.search-box input {
+    padding: 5px;
+}
+
+.search-box button {
+    padding: 4px;
+}
+
+nav .nav-item {
+    padding: 20px 40px 20px 40px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav .nav-item .link li a {
+    text-decoration: none;
+    color: white;
+    
+}
+nav .nav-item .link li {
+    display: inline;
+    
+    margin-left: 10px;
+    list-style-type: none;
+}
+
+.view-container {
+    height: 600px;
+}
+
+.left {
+    width: 20%;
+    height: 600px;
+    background-color: #f8f8fa;
+    float: left;
+}
+
+.right {
+    background-color: #f8f8fa;
+    width: 80%;
+    height: 600px;
+    float: right;
+}
+
+.filter {
+    background-color: black;
+    height: 80%;
+    width: 80%;
+    margin: 50px auto;
+    color: white;
+    text-align: center;
+}
+
+.f-cat {
+    padding: 20px;
+}
+
+.f-tags {
+    padding: 40px;
+}
+.view {
+    background-color: #000000;
+    height: 90%;
+    width: 90%;
+    margin: 30px auto;
+    padding-left: 60px;
+    padding-top: 20px;
+}
+
+.vid-item {
+    width: 230px;
+    height: 170px;
+    margin: 20px;
+    display: inline-block;
+    background-color: white;
+    
+}
+
+.vid-item img {
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer {
+    width: 100%;
+    height: 160px;
+    background-color: black;
+}
+
+.footer-data {
+    text-align: center;
+}
+
+.footer-data li {
+    
+    padding: 15px;
+    margin: 50px auto;
+    display: inline-block;
+}
+.footer-data a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+
+.err{
+    margin-top: 24px;
+    text-align: center;
+    color: red;
+}
+
+/* /////////// */
+
+.play-container{
+    display: flex;
+}
+
+
+.playleft{
+    width: 70%;
+    height: 600px;
+
+}
+.playright{
+    width: 30%;
+    height: 600px;
+    background-color: pink;
+}
+
+.list-right{
+    width: 90%;
+    height: 100%;
+    background-color: green;
+    margin: auto;
+}
