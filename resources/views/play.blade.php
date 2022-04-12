@@ -22,12 +22,11 @@
         <div class="playleft">
 
             <video width="100%" height="400px" style="margin: auto" controls>
-                <source src="{{URL::asset('upload/videos/song.mp4')}}" type="video/mp4">
-
+                <source src="{{asset('upload/assets/'.$video->video_filename)}}" type="video/mp4">
             </video>
-            <h2 style="margin-top:20px">{{$title}}</h2>
+            <h2 style="margin-top:20px">{{$video->title}}</h2>
             <p style="margin-top: 10px">Description</p>
-            <p style="margin-top: 20px">{{$desc}}</p>
+            <p style="margin-top: 20px">{{$video->description}}</p>
 
 
 

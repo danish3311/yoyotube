@@ -9,10 +9,9 @@ use Illuminate\Http\Request;
 class Play extends Controller
 {
 
-    public function index()
+    public function index($id)
     {
-        // $video = new Video();
-        // $video 
-        return view('play');
-    }
+        $video = Video::where("id",'=', $id)->first();       
+        return view('play',['video'=> $video]);
+      }
 }

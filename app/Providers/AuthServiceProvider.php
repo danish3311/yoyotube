@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
+use App\Gates\AdminGate;
+use App\Policies\VideoPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +15,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        // 'App\Models\Post' => 'App\Policies\PostPolicy',
+        Video::class => VideoPolicy::class,
     ];
 
     /**
@@ -25,6 +28,15 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+    //    Gate::define('isAdmin',function($user){
+    //        if($user->email=== "admin@gmail.com"){
+    //            return true;
+    //        }else{
+    //            return false;
+    //        }
+    //    });
+
+Gate::define('isAdmin',[AdminGate::class,'check_admin']);
+
     }
 }

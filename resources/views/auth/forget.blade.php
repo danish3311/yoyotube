@@ -22,6 +22,7 @@
                 </div>
             </div>
             <div class="action">
+                <h2>k</h2>
                 <button>{{ __('Email Password Reset Link') }}</button>
             </div>
         </form>

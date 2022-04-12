@@ -1,59 +1,60 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<!DOCTYPE html>
+<html lang="en">
 
-        <form method="POST" action="{{ route('register') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <link rel="stylesheet" href="<?php echo asset('css/style.css')?>">
+    <link rel="stylesheet" href="<?php echo asset('css/register.css')?>" type="text/css">
+
+
+</head>
+
+<body>
+
+       <!-- Session Status -->
+       <x-auth-session-status class="mb-4" :status="session('status')" />
+
+       
+       
+       <!-- partial:index.partial.html -->
+       <div class="login-form">
+     
+        <form method="POST" action="{{ route('login') }}">
             @csrf
+            <h1>Register</h1>
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+        <div class="err">
+                  <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        </div>
+            <div class="content">
+                <div class="input-field">
+                    <input type="email" name="email" placeholder="Email" autocomplete="nope">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" placeholder="Password" autocomplete="new-password">
+                </div>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
+                <div class="input-field">
+                    <input type="password" name="password_confirmation" placeholder="Conform     Password" autocomplete="new-password">
+                </div>
+                <a href="#" class="link">   @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif</a>
+              <div class="remember" style="margin-top:20px"> {{ __('Remember me') }}<input  type="checkbox"></div>
+              
+            <div class="action">
+                <a href="{{route('login')}}">Login</a>
+                <button>{{ __('Register') }}</button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+
+</body>
+
+</html>

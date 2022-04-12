@@ -28,13 +28,13 @@ class Form extends Controller
         if ($req->hasFile('thumbnail')) {
             $thumbnail = $req->file('thumbnail');
             $thumbnailname = time() . '.' .$thumbnail->getClientOriginalExtension();
-            $thumbnail->move('upload/thumbnails', $thumbnailname);
+            $thumbnail->move('upload/assets', $thumbnailname);
             $video->thumbnail_filename = $thumbnailname;
         }
         if ($req->hasFile('video')) {
             $videofile = $req->file('video');
             $videofilename = time() . '.' .$videofile->getClientOriginalExtension();
-            $videofile->move('upload/videos',$videofilename);
+            $videofile->move('upload/assets',$videofilename);
             $video->video_filename = $videofilename;
         }
         $video->save();    

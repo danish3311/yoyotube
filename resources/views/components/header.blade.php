@@ -15,8 +15,17 @@
 
         <div class="link">
 
-            <li><a href="">UPLOAD</a></li>
+            <li><a href="{{route('form')}}">UPLOAD</a></li>
+            @if (Auth::check())
+            <li><a href="{{route('profile')}}">{{ Auth::user()->name }}</a></li>
+            <form method="POST" style=" text-align: right; margin:auto" action="{{ route('logout') }}">
+                @csrf
+                <label for="Logout"></label>
+                <li><input type="submit" style="padding: 5px;margin-top:5px" value="Logout"></li>
+            </form>
+            @else
             <li><a href="{{route('login')}}">LOGIN</a></li>
+            @endif
 
 
         </div>
