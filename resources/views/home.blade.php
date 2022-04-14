@@ -50,7 +50,7 @@
         <div class="view">
           @foreach ($videos as $video)
           <div class="vid-item">
-            <a href="{{url('/play/'.$video->id) }}
+            <a href="{{url('play/'.$video->id) }}
               "><img src="{{asset('upload/assets/'.$video->thumbnail_filename)}}" alt=""></a>
             <h4>{{$video->title}}</h4>
           </div>

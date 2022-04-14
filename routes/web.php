@@ -26,10 +26,22 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', [VideoViewController::class, 'videoview'])->name('home');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index']);
+    
+    Route::get('/admin/dashboard/users', [AdminDashboardController::class, 'users'])->name('users');
 
+    Route::get('/admin/dashboard/videos', [AdminDashboardController::class, 'videos']);
 
+    Route::get('/admin/dashboard/videos/play/{id}', [AdminDashboardController::class, 'play']);
+    
+    Route::get('/admin/dashboard/users/edit/{id}', [AdminDashboardController::class, 'edit']);
+
+    Route::put('/admin/dashboard/users/update/{id}', [AdminDashboardController::class, 'update']);
+
+    Route::get('/admin/dashboard/users/del/{id}', [AdminDashboardController::class, 'remove']);
+    
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
 
     Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('update_profile');

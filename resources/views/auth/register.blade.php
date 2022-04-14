@@ -22,7 +22,7 @@
        <!-- partial:index.partial.html -->
        <div class="login-form">
      
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
             <h1>Register</h1>
 
@@ -31,6 +31,9 @@
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
         </div>
             <div class="content">
+                <div class="input-field">
+                    <input type="text" name="name" placeholder="Name" autocomplete="nope">
+                </div>
                 <div class="input-field">
                     <input type="email" name="email" placeholder="Email" autocomplete="nope">
                 </div>
@@ -50,7 +53,7 @@
               
             <div class="action">
                 <a href="{{route('login')}}">Login</a>
-                <button>{{ __('Register') }}</button>
+                <button>{{ __('register') }}</button>
             </div>
         </form>
     </div>
